@@ -61,7 +61,7 @@ int readFile(string readList)
     
     //Use the insertion operator as well as the hex converter to store the lines of the textfile into variables
     //It should go as long as the input file has content to read
-    while(inputFile >> opToDo >> hex >> firstNum >> secondNum)
+    do
     {
         //Check if the operation preformed is addition
         if(opToDo == "ADD" || opToDo == "ADDS")
@@ -93,13 +93,6 @@ int readFile(string readList)
             newNum = firstNum | secondNum;
 
             cout << opToDo << " 0x" << hex << firstNum << " 0x" << hex << secondNum << ": <0x" << newNum << ">" << endl;
-        }
-
-        if(opToDo == "NOT" || opToDo == "NOTS")
-        {
-            newNum = ~firstNum;
-
-            cout << opToDo << " 0x" << hex << firstNum << hex << ": <0x" << newNum << ">" << endl;
         }
 
         if(opToDo == "XOR" || opToDo == "XORS")
@@ -140,7 +133,18 @@ int readFile(string readList)
         {
             cout << "Overflow: <no>" << endl;
         }
-    }
+    }while(inputFile >> opToDo >> hex >> firstNum >> secondNum);
 
+    do
+    {
+        if(opToDo == "NOT" || opToDo == "NOTS")
+        {
+            newNum = ~firstNum;
+
+            cout << opToDo << " 0x" << hex << firstNum << hex << ": <0x" << newNum << ">" << endl;
+        }
+
+    }while (inputFile >> opToDo >> hex >> firstNum);
+    
     return 1;
 }
