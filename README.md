@@ -1,8 +1,8 @@
 # CS219-Assignment-2
-This is the first assignment for CS 219
+This is the second assignment for CS 219
 
 # How to Execute
-In order to run this program, one must open a terminal and both input the name of this program (AssignmentOneFinal) after a ./, then put a space, and lastly add the name of the text file it is reading from (Programming-Project-2). If both of these are not input correctly, the program will not run.
+In order to run this program, one must open a terminal and both input the name of this program (AssignmentTwoFinal) after a ./, then put a space, and lastly add the name of the text file it is reading from (Programming-Project-2). If both of these are not input correctly, the program will not run.
 
 It should look like this: ./AssignmentTwoFinal Programming-Project-2.txt
 
