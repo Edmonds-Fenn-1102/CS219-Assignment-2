@@ -74,6 +74,7 @@ int readFile(string readList)
             //Add the two hex numbers together
             newNum = firstNum + secondNum;
 
+            //set flags if they can be set
             if(opToDo == "ADDS")
             {
                 nFlag = nFlags(newNum);
@@ -86,8 +87,10 @@ int readFile(string readList)
             
         }
 
+        //check for sub operation
         if(opToDo == "SUB" || opToDo == "SUBS")
         {
+            //subtract varaiables
             newNum = firstNum - secondNum;
 
             if(opToDo == "SUBS")
@@ -100,8 +103,10 @@ int readFile(string readList)
 
         }
 
+        //check for AND operation
         if(opToDo == "AND" || opToDo == "ANDS")
         {
+            //do a bitwise AND operation
             newNum = firstNum & secondNum;
 
             if(opToDo == "ANDS")
@@ -113,8 +118,10 @@ int readFile(string readList)
             cout << opToDo << " 0x" << hex << firstNum << " 0x" << hex << secondNum << ": <0x" << newNum << ">" << endl;
         }
 
+        //Check for OR operation
         if(opToDo == "ORR" || opToDo == "ORRS")
         {
+            //do a bitwise OR operation
             newNum = firstNum | secondNum;
 
             if(opToDo == "ORRS")
@@ -126,8 +133,10 @@ int readFile(string readList)
             cout << opToDo << " 0x" << hex << firstNum << " 0x" << hex << secondNum << ": <0x" << newNum << ">" << endl;
         }
 
+        //Check for NOT operation
         if(opToDo == "NOT" || opToDo == "NOTS")
         {
+            //preform bitwise NOT operation
             newNum = ~firstNum;
 
             if(opToDo == "NOTS")
@@ -139,8 +148,10 @@ int readFile(string readList)
             cout << opToDo << " 0x" << hex << firstNum << hex << ": <0x" << newNum << ">" << endl;
         }
 
+        //Check for XOR operation
         if(opToDo == "XOR" || opToDo == "XORS")
         {
+            //do bitwise XOR operation
             newNum = firstNum ^ secondNum;
 
             if(opToDo == "XORS")
@@ -152,10 +163,13 @@ int readFile(string readList)
             cout << opToDo << " 0x" << hex << firstNum << " 0x" << hex << secondNum << ": <0x" << newNum << ">" << endl;
         }
 
+        //check for ASR operation
         if(opToDo == "ASR" || opToDo == "ASRS")
         {
+            //convert to signed
             int32_t newestNum = firstNum;
 
+            //shift to the right
             newNum = newestNum / pow(2, secondNum);
 
             if(opToDo == "ASRS")
@@ -175,8 +189,10 @@ int readFile(string readList)
 
         }
 
+        //Check for LSR operation
         if(opToDo == "LSR" || opToDo == "LSRS")
         {
+            //preform LSR op
             newNum = firstNum / pow(2, secondNum);
 
             if(opToDo == "LSRS")
@@ -188,8 +204,10 @@ int readFile(string readList)
             cout << opToDo << " 0x" << hex << firstNum << " " << hex << secondNum << ": <0x" << newNum << ">" << endl;
         }
 
+        //check for LSL operation
         if(opToDo == "LSL" || opToDo == "LSLS")
         {
+            //preform LSL op
             newNum = firstNum * pow(2, secondNum);
 
             if(opToDo == "LSLS")
@@ -208,8 +226,10 @@ int readFile(string readList)
     return 1;
 }
 
+//set the n flags (if result is negative, set to 1)
 int nFlags(uint32_t num)
 {
+    //change to signed
     int32_t check = num;
 
     if(check < 0)
@@ -222,6 +242,8 @@ int nFlags(uint32_t num)
     }
 }
 
+
+//set the zero flags (if result is 0, set to 1)
 int zFlags(uint32_t num)
 {
     if(num == 0)
