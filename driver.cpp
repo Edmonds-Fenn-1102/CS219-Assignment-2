@@ -154,7 +154,9 @@ int readFile(string readList)
 
         if(opToDo == "ASR" || opToDo == "ASRS")
         {
-            newNum = firstNum / pow(2, secondNum);
+            int32_t newestNum = firstNum;
+
+            newNum = newestNum / pow(2, secondNum);
 
             if(opToDo == "ASRS")
             {
@@ -162,7 +164,14 @@ int readFile(string readList)
                 zFlag = zFlags(newNum);
             }
 
-            cout << opToDo << " 0x" << hex << firstNum << " " << hex << secondNum << ": <0x" << newNum << ">" << endl;
+            if(newNum != 0)
+            {
+                cout << opToDo << " 0x" << hex << firstNum << " " << hex << secondNum << ": <0x" << (newNum) << ">" << endl;
+            }
+            else
+            {
+                cout << opToDo << " 0x" << hex << firstNum << " " << hex << secondNum << ": <0x" << (newNum-1) << ">" << endl;
+            }
 
         }
 

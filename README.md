@@ -27,16 +27,24 @@ An 'if' statment looks to find the operation being used, it does the operation, 
 # Possible operations
 
 ADD/ADDS: This operation takes the two numbers from the text file, converts to decimal, and adds them together, if the operation is ADDS, the program will check for the result being zero or negative and change flags based off that.
+
 SUB/SUBS: This operation takes the two numbers from the text file, converts to decimal, and subtracts them from each other, if the operation is SUBS, the program will check for the result being zero or negative and change flags based off that.
+
 AND/ANDS: This operation takes the two numbers from the text file, converts to decimal, and AND's them (using standard library) with eachother, if the operation is ANDS, the program will check for the result being zero or negative and change flags based off that.
+
 ORR/ORRS: This operation takes the two numbers from the text file, converts to decimal, and OR's them (using standard library) with eachother, if the operation is ORSS, the program will check for the result being zero or negative and change flags based off that.
+
 ASR/ASRS: This operation takes the two numbers from the text file, converts to decimal, and divides the first number by 2 to the power of the second number them with eachother, if the operation is ASRS, the program will check for the signed result being zero or negative and change flags based off that.
+
 LSR/LSRS: This operation takes the two numbers from the text file, converts to decimal, and divides the first number by 2 to the power of the second number them with eachother, if the operation is LSRS, the program will check for the unsigned result being zero or negative and change flags based off that.
+
 LSL/LSLS: This operation takes the two numbers from the text file, converts to decimal, and multiplies the first number by 2 to the power of the second number them with eachother, if the operation is LSLS, the program will check for the unsigned result being zero or negative and change flags based off that.
+
 NOT/NOTS: This operation takes the one number from the text file, converts to decimal, and NOT's them (using standard library), if the operation is NOTS, the program will check for the result being zero or negative and change flags based off that.
+
 XOR/XORS: This operation takes the two numbers from the text file, converts to decimal, and XORS's them (using standard library), if the operation is XORS, the program will check for the result being zero or negative and change flags based off that.
 
-After calculating all of that, the function checks for changing flags (first looking to see if the operation being done has an S at the end of it) using an if statement in which the program looks for if the final number is equal to zero or if its negative. If it does detect that, it will set the Z or N flags to 1, and if it detects nothing, then it will set the flags to 0. After this the function ends the program returns to the while loop.
+After calculating all of that, the function checks for changing flags (first looking to see if the operation being done has an S at the end of it) using an if statement in which the program looks for if the final number is equal to zero or if its negative. If it does detect that, it will set the Z or N flags to 1, and if it detects nothing, then it will set the flags to 0. After this the function ends the program returns to reading the file.
 
 # Results and Overflow
 
