@@ -1,6 +1,6 @@
 //
 //Author: Fenn Edmonds
-//Purpose: To implement the ADD function using c++ code
+//Purpose: To implement multiple functions using c++ code
 //Date: 2/22/2023
 //
 
